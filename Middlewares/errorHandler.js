@@ -1,10 +1,24 @@
 
-
+const express=require('express');
 const errorProblem= (err,req,res,next)=>{
-    console.log("req message",req.message);
+   
+    console.log("Error Name :", err.name);
+    console.log("Error Message :", err.message);
+    console.log(err);
 
-    console.log("err",err);
-   res.json(err);
+    // JWT Expired
+    if (err.name == "TokenExpiredError") {
+
+        return res.status(401).json({
+            success: false,
+            message: "Token has expired. Please login again."
+        });
+
+    }
+
+  
+    return res.json(err);
+
   // next()
 
 }

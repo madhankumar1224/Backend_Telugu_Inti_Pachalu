@@ -2,8 +2,10 @@ const express = require('express');
 
 const cors=require('cors');
 const dotenv=require('dotenv');
+const path = require("path");
 const connectDB=require('./Database/db');
 const userRoute =require('./Routing/useRouting');
+const productRouting=require('./Routing/productRouting');
 const {errorProblem}=require('./Middlewares/errorHandler');
 
 // Load environment variables
@@ -24,8 +26,10 @@ app.use(cors(corsOption));
 
 // Middleware to parse JSON
 app.use(express.json());
-
+app.use(express.static("public"));
+app.use("/uploads", express.static(path.join(__dirname, "public/data/uploads")));
 app.use('/user',userRoute);
+app.use('/product',productRouting);
 app.use(errorProblem);
 // app.get('/', (req, res) => {
 
