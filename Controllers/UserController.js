@@ -76,7 +76,7 @@ try{
       const token=  jwt.sign({
         name:userDetails[0].name,role:userDetails[0].role,email:userDetails[0].email,
        
-       },process.env.JWT_SECRET_KEY,{expiresIn:'200s'});
+       },process.env.JWT_SECRET_KEY,{expiresIn:'2000s'});
 
      console.log("token",token);  
      
