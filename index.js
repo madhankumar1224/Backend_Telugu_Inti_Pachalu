@@ -19,7 +19,7 @@ connectDB()
 const app = express();
 const corsOption={
     // origin:'http://localhost:5173',
-    origin:'https://telugu-inti-pickles-u2hw-mu.vercel.app/',
+    origin:'https://telugu-inti-pickles-u2hw-mu.vercel.app',
     
     methods:['GET', 'PUT', 'POST','DELETE'],
     allowedHeaders:['Content-Type', 'Authorization'],
