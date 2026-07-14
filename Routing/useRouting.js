@@ -7,4 +7,4 @@ const{isAdmin}=require('../Middlewares/authMiddleware');
 router.post('/signup',SignupController);
 router.post('/login',loginController);
 
-module.exports=router;
+module.exports=router;           

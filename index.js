@@ -4,6 +4,7 @@ const cors=require('cors');
 const dotenv=require('dotenv');
 const path = require("path");
 const connectDB=require('./Database/db');
+//const run=require('./Database/run');
 const userRoute =require('./Routing/useRouting');
 const productRouting=require('./Routing/productRouting');
 const {errorProblem}=require('./Middlewares/errorHandler');
@@ -12,7 +13,7 @@ const {errorProblem}=require('./Middlewares/errorHandler');
 dotenv.config();
 
 
-connectDB();
+connectDB()
 
 
 const app = express();
