@@ -33,4 +33,5 @@ router.get('/allPickles',isAdmin,allPickles);
 router.delete('/deletePickle/:id',isAdmin,deletePickleProduct);
 router.put('/updatepickle/:id',isAdmin, upload.array("pickleImage"),updatePickleProduct);
 
-module.exports=router;
+module.exports=router;    
+// mm
