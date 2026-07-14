@@ -19,7 +19,7 @@ const userSchema = new Schema({
 
 
 
-
+        
 const saltRounds = 10;
 
 userSchema.pre('save',async function(){

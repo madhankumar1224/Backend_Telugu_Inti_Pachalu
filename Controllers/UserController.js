@@ -18,7 +18,7 @@ if (MyPassword !== confirmPassword) {
 const finduserALreadyExisted=await Users.find({email:emailAddress});
 
 // console.log("finduserALreadyExisted",finduserALreadyExisted);
-if(finduserALreadyExisted.length>=1){
+if(finduserALreadyExisted.length>=1){                   
 
     res.json("user already existed")
 }else{

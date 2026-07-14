@@ -169,7 +169,7 @@ console.log("req.params",req.params);
         product.PickleCateogry = PickleCateogry;
 
         product.PickleDiscount = PickleDiscount;
-
+             
    
 
         if (req.files && req.files.length > 0) {
@@ -197,7 +197,7 @@ console.log("req.params",req.params);
         image: `data:${img.contentType};base64,${img.image.toString("base64")}`
     }))
     }
-
+      
         return res.status(200).json({
 
             message: "Product updated successfully",
@@ -226,4 +226,4 @@ console.log("req.params",req.params);
 
 
 
-module.exports={addPickleProduct,allPickles,deletePickleProduct,updatePickleProduct};
+module.exports={addPickleProduct,allPickles,deletePickleProduct,updatePickleProduct}; 
