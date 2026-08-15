@@ -1,7 +1,7 @@
 const express=require('express');
 const router = express.Router();
 const {addPickleProduct,allPickles,deletePickleProduct,updatePickleProduct}=require('../Controllers/ProductControllers');
-const {isAdmin}=require('../Middlewares/authMiddleware');
+const {isAdmin,isUser}=require('../Middlewares/authMiddleware');
 
 const multer=require('multer');  
 const storage = multer.memoryStorage()
@@ -30,8 +30,10 @@ const upload = multer({ storage: storage })
 
 router.post('/addPickle',isAdmin,upload.array('pickleImage') ,addPickleProduct);
 router.get('/allPickles',isAdmin,allPickles);
+router.get('/allProductsPickle',isUser,allPickles);
+router.get('/publicProductsPickle',allPickles);
 router.delete('/deletePickle/:id',isAdmin,deletePickleProduct);
 router.put('/updatepickle/:id',isAdmin, upload.array("pickleImage"),updatePickleProduct);
 
 module.exports=router;    
-// mm
+ 
