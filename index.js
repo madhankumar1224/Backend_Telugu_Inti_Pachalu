@@ -7,6 +7,7 @@ const connectDB=require('./Database/db');
 //const run=require('./Database/run');
 const userRoute =require('./Routing/useRouting');
 const productRouting=require('./Routing/productRouting');
+const cartRouting=require('./Routing/cartRouting');
 const {errorProblem}=require('./Middlewares/errorHandler');
 
 // Load environment variables
@@ -33,6 +34,7 @@ app.use(express.static("public"));
 app.use("/uploads", express.static(path.join(__dirname, "public/data/uploads")));
 app.use('/user',userRoute);
 app.use('/product',productRouting);
+app.use('/cart',cartRouting);
 app.use(errorProblem);
 // app.get('/', (req, res) => {
 
