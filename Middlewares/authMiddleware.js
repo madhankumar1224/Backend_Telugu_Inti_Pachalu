@@ -56,6 +56,8 @@ const isAdmin=async(req,res,next)=>{
 const isUser=async(req,res,next)=>{
     console.log("req.body",req.body);
      console.log("req.header",req.headers);
+           console.log("reqq.user1112222:::",req.user);  
+
  try {
         
         if (!req.headers.authorization || !req.headers.authorization.startsWith('Bearer ')) {
