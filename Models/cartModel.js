@@ -21,6 +21,11 @@ const AddedToCartSchema = new Schema(
       type: Number,
       required: true,
     },
+    totalPrice:{
+      type:Number,
+      required:true,
+      default:0,
+    }
   },
   {
     _id: true,
@@ -41,10 +46,7 @@ const cartSchema = new Schema(
       default: [],
     },
   }
-  //,
-//   {
-//     timestamps: true,
-//   }
+ 
 );
 
 module.exports = mongoose.model("Cart", cartSchema);
